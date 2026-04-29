@@ -1,0 +1,22 @@
+<div class="users-container">
+  <h2>Lista de Usuarios</h2>
+  
+  <table class="users-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Correo</th>
+      </tr>
+    </thead>
+    <tbody>
+    @for (user of users$ | async; track user.id) {
+      <tr class="user-row">
+        
+        <td class="name-cell">{{ user.name }}</td>
+        <td class="email-cell">{{ user.email }}</td>
+        
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

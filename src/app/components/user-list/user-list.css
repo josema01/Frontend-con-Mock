@@ -1,0 +1,69 @@
+.users-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.users-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.users-table thead {
+  background: linear-gradient(135deg, #50c750 0%, #50c750 100%);
+  color: white;
+}
+
+.users-table th {
+  padding: 15px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.users-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+.users-table tbody tr:hover {
+  background-color: #f5f7ff;
+}
+
+.users-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.users-table td {
+  padding: 15px 20px;
+  color: #555;
+  font-size: 14px;
+}
+
+.name-cell {
+  font-weight: 500;
+  color: #333;
+}
+
+.email-cell {
+  color: #667eea;
+}
+
+
+.users-table tbody tr:nth-child(even) {
+  background-color: #f9f9fb;
+}
