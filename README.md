@@ -1,59 +1,140 @@
-# FrontendMockAngular
+# Frontend Mock Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+A modern Angular 21 application that demonstrates data fetching and display with mock JSON data. This project showcases best practices for building responsive web applications with Angular's latest features, including standalone components and reactive patterns.
 
-## Development server
+## 🎯 Features
 
-To start a local development server, run:
+- **Modern Angular Architecture**: Built with Angular 21 using standalone components
+- **Reactive Data Flow**: Uses RxJS Observables for efficient data handling
+- **Responsive Design**: Clean, responsive UI with attractive table styling
+- **Mock Data Integration**: Demonstrates how to work with JSON mock data
+- **Type Safety**: Full TypeScript support with strict typing
+- **Development Ready**: Includes dev tools and testing framework setup
 
-```bash
-ng serve
-```
+## 🛠️ Tech Stack
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Framework**: Angular 21.2
+- **Language**: TypeScript 5.9
+- **Styling**: CSS3 with modern layouts
+- **HTTP Client**: Angular HttpClient for data fetching
+- **Reactive Patterns**: RxJS 7.8
+- **Testing**: Vitest 4.0
+- **Build Tool**: Angular CLI 21.2.3
+- **Package Manager**: npm 11.12.0
 
-## Code scaffolding
+## 📋 Prerequisites
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Before you begin, ensure you have installed:
+- **Node.js** (v18+ recommended)
+- **npm** (comes with Node.js)
+- **Angular CLI** (optional but recommended):
+  ```bash
+  npm install -g @angular/cli@21
+  ```
 
-```bash
-ng generate component component-name
-```
+## 🚀 Getting Started
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 1. Clone the Repository
+bash git clone https://github.com/josema01/Frontend-con-Mock.git cd Frontend-con-Mock
+### 2. Install Dependencies
+bash npm install
 
-```bash
-ng generate --help
-```
+### 3. Start Development Server
+bash npm start
 
-## Building
+The application will be available at `http://localhost:4200/`
 
-To build the project run:
+## 📁 Project Structure
+frontend-mock-angular/ ├── src/ │ ├── app/ │ │ ├── components/ │ │ │ └── user-list/ │ │ │ ├── user-list.component.ts │ │ │ ├── user-list.component.html │ │ │ └── user-list.css │ │ ├── services/ │ │ │ └── user.service.ts │ │ ├── app.ts │ │ ├── app.html │ │ ├── app.css │ │ ├── app.routes.ts │ │ └── app.config.ts │ ├── assets/ │ │ └── users.json │ ├── main.ts │ ├── styles.css │ └── index.html ├── angular.json ├── tsconfig.json ├── package.json └── README.md
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🔧 Available Scripts
 
-## Running unit tests
+| Command | Description |
+|---------|-------------|
+| `npm start` | Runs the development server on http://localhost:4200 |
+| `npm run build` | Builds the project for production in the `dist/` directory |
+| `npm run watch` | Watches for file changes and rebuilds continuously |
+| `npm test` | Runs unit tests with Vitest |
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 📊 Mock Data Structure
 
-```bash
-ng test
-```
+The application uses mock user data from `src/assets/users.json`:
+json [ { "id": 1, "nombre": "User Name", "correo": "user@example.com" }, ... ]
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+### User Service
 
-```bash
-ng e2e
-```
+The `UserService` (`src/app/services/user.service.ts`) handles data fetching:
+typescript export class UserService { private apiUrl = '/users.json';
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+constructor(private http: HttpClient) {}
 
-## Additional Resources
+getUsers(): Observable<any[]> { return this.http.get<any[]>(this.apiUrl); } }
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## 🎨 User List Component
+
+The `UserListComponent` displays users in a styled table format with:
+- Responsive layout
+- Table header with column names (Nombre, Correo)
+- Gradient styling for headers
+- Hover effects on rows
+- Alternating row colors
+
+## 🔄 Data Flow
+UserListComponent ↓ UserService (getUsers()) ↓ HttpClient.get() → /assets/users.json ↓ RxJS Observable ↓ Template (async pipe)
+
+## 📱 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## 🏗️ Building for Production
+bash npm run build
+
+The optimized build artifacts will be stored in the `dist/` directory.
+
+## ✅ Testing
+
+Run the test suite:
+bash npm test
+
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 📚 Additional Resources
+
+- [Angular Documentation](https://angular.dev)
+- [Angular CLI Documentation](https://angular.dev/tools/cli)
+- [RxJS Documentation](https://rxjs.dev)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs)
+
+## 👤 Author
+
+**José Manuel Moraga**
+- GitHub: [@josema01](https://github.com/josema01)
+
+## 📞 Support
+
+If you have any questions or encounter issues, please open an issue on the GitHub repository.
+
+---
+
+**Last Updated**: April 2026  
+**Angular Version**: 21.2.3  
+**Node Version**: 18+
