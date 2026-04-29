@@ -30,48 +30,49 @@ Antes de comenzar, asegúrate de tener instalado:
 - **npm** (incluido con Node.js)
 - **Angular CLI** (opcional pero recomendado)
 
-```bash
-npm install -g @angular/cli@21
-
-## 🚀 Getting Started
+```console
+$ npm install -g @angular/cli@21
+```
+## 🚀 Como empezar
 
 ### 1. Clonar el repositorio
-bash git clone https://github.com/josema01/Frontend-con-Mock.git 
-cd Frontend-con-Mock
+```console
+$ git clone https://github.com/josema01/Frontend-con-Mock.git
+$ cd Frontend-con-Mock
+```
+
 ### 2. Instalar dependencias
-bash npm install
-
+````console
+$ npm install
+````
 ### 3. Iniciar el servidor de desarrollo
-bash npm start
+```console
+$ npm start
+````
+La aplicacion esta disponible en  `http://localhost:4200/`
 
-The application will be available at `http://localhost:4200/`
+## 📁 Estructura del Proyecto
 
-## 📁 Estructura del proyecto
-frontend-mock-angular/
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   └── user-list/
-│   │   │       ├── user-list.component.ts
-│   │   │       ├── user-list.component.html
-│   │   │       └── user-list.css
-│   │   ├── services/
-│   │   │   └── user.service.ts
-│   │   ├── app.ts
-│   │   ├── app.html
-│   │   ├── app.css
-│   │   ├── app.routes.ts
-│   │   └── app.config.ts
-│   ├── assets/
-│   │   └── users.json
-│   ├── main.ts
-│   ├── styles.css
-│   └── index.html
-├── angular.json
-├── tsconfig.json
-├── package.json
-└── README.md
+### Raíz del Proyecto
+- `src/` - Código fuente
+- `angular.json` - Configuración de Angular
+- `tsconfig.json` - Configuración de TypeScript
+- `package.json` - Dependencias
 
+### Estructura de `src/`
+- `app/` - Aplicación principal
+- `assets/` - Recursos estáticos (JSON mock)
+- `main.ts` - Punto de entrada
+- `index.html` - Página principal
+- `styles.css` - Estilos globales
+
+### Estructura de `src/app/`
+- `components/` - Componentes reutilizables
+  - `user-list/` - Componente de lista de usuarios
+- `services/` - Servicios (user.service.ts)
+- `app.ts` - Componente raíz
+- `app.routes.ts` - Rutas
+- `app.config.ts` - Configuración
 
 ## 🔧 Scripts Disponibles
 
