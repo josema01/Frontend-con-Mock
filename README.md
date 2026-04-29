@@ -1,54 +1,79 @@
 # Frontend Mock Angular
 
-A modern Angular 21 application that demonstrates data fetching and display with mock JSON data. This project showcases best practices for building responsive web applications with Angular's latest features, including standalone components and reactive patterns.
+Aplicación moderna en **Angular 21** que demuestra la obtención y visualización de datos utilizando **JSON mockeado**. Este proyecto muestra buenas prácticas para construir aplicaciones web responsivas utilizando las últimas características de Angular, como **componentes standalone** y **patrones reactivos**.
 
-## 🎯 Features
+## 🎯 Características
 
-- **Modern Angular Architecture**: Built with Angular 21 using standalone components
-- **Reactive Data Flow**: Uses RxJS Observables for efficient data handling
-- **Responsive Design**: Clean, responsive UI with attractive table styling
-- **Mock Data Integration**: Demonstrates how to work with JSON mock data
-- **Type Safety**: Full TypeScript support with strict typing
-- **Development Ready**: Includes dev tools and testing framework setup
+- **Arquitectura Angular moderna**: Construido con Angular 21 usando componentes standalone  
+- **Flujo de datos reactivo**: Uso de Observables de RxJS para una gestión eficiente de datos  
+- **Diseño responsivo**: Interfaz limpia y responsiva con tablas estilizadas  
+- **Integración de datos mock**: Ejemplo práctico de consumo de datos desde un archivo JSON  
+- **Seguridad de tipos**: Soporte completo de TypeScript con tipado estricto  
+- **Listo para desarrollo**: Incluye herramientas de desarrollo y configuración de testing  
 
-## 🛠️ Tech Stack
+## 🛠️ Tecnologías Utilizadas
 
-- **Framework**: Angular 21.2
-- **Language**: TypeScript 5.9
-- **Styling**: CSS3 with modern layouts
-- **HTTP Client**: Angular HttpClient for data fetching
-- **Reactive Patterns**: RxJS 7.8
-- **Testing**: Vitest 4.0
-- **Build Tool**: Angular CLI 21.2.3
-- **Package Manager**: npm 11.12.0
+- **Framework**: Angular 21.2  
+- **Lenguaje**: TypeScript 5.9  
+- **Estilos**: CSS3 con layouts modernos  
+- **Cliente HTTP**: Angular HttpClient  
+- **Programación reactiva**: RxJS 7.8  
+- **Testing**: Vitest 4.0  
+- **Herramienta de build**: Angular CLI 21.2.3  
+- **Gestor de paquetes**: npm 11.12.0  
 
-## 📋 Prerequisites
+## 📋 Requisitos Previos
 
-Before you begin, ensure you have installed:
-- **Node.js** (v18+ recommended)
-- **npm** (comes with Node.js)
-- **Angular CLI** (optional but recommended):
-  ```bash
-  npm install -g @angular/cli@21
-  ```
+Antes de comenzar, asegúrate de tener instalado:
+
+- **Node.js** (v18+ recomendado)
+- **npm** (incluido con Node.js)
+- **Angular CLI** (opcional pero recomendado)
+
+```bash
+npm install -g @angular/cli@21
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
-bash git clone https://github.com/josema01/Frontend-con-Mock.git cd Frontend-con-Mock
-### 2. Install Dependencies
+### 1. Clonar el repositorio
+bash git clone https://github.com/josema01/Frontend-con-Mock.git 
+cd Frontend-con-Mock
+### 2. Instalar dependencias
 bash npm install
 
-### 3. Start Development Server
+### 3. Iniciar el servidor de desarrollo
 bash npm start
 
 The application will be available at `http://localhost:4200/`
 
-## 📁 Project Structure
-frontend-mock-angular/ ├── src/ │ ├── app/ │ │ ├── components/ │ │ │ └── user-list/ │ │ │ ├── user-list.component.ts │ │ │ ├── user-list.component.html │ │ │ └── user-list.css │ │ ├── services/ │ │ │ └── user.service.ts │ │ ├── app.ts │ │ ├── app.html │ │ ├── app.css │ │ ├── app.routes.ts │ │ └── app.config.ts │ ├── assets/ │ │ └── users.json │ ├── main.ts │ ├── styles.css │ └── index.html ├── angular.json ├── tsconfig.json ├── package.json └── README.md
+## 📁 Estructura del proyecto
+frontend-mock-angular/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   └── user-list/
+│   │   │       ├── user-list.component.ts
+│   │   │       ├── user-list.component.html
+│   │   │       └── user-list.css
+│   │   ├── services/
+│   │   │   └── user.service.ts
+│   │   ├── app.ts
+│   │   ├── app.html
+│   │   ├── app.css
+│   │   ├── app.routes.ts
+│   │   └── app.config.ts
+│   ├── assets/
+│   │   └── users.json
+│   ├── main.ts
+│   ├── styles.css
+│   └── index.html
+├── angular.json
+├── tsconfig.json
+├── package.json
+└── README.md
 
 
-## 🔧 Available Scripts
+## 🔧 Scripts Disponibles
 
 | Command | Description |
 |---------|-------------|
@@ -57,15 +82,16 @@ frontend-mock-angular/ ├── src/ │ ├── app/ │ │ ├── compo
 | `npm run watch` | Watches for file changes and rebuilds continuously |
 | `npm test` | Runs unit tests with Vitest |
 
-## 📊 Mock Data Structure
+## 📊 Estructura de los Datos Mock
 
-The application uses mock user data from `src/assets/users.json`:
+Los datos mock de usuarios se encuentran en:
+src/assets/users.json
 json [ { "id": 1, "nombre": "User Name", "correo": "user@example.com" }, ... ]
 
 
-### User Service
+### 🧩 Servicio de Usuarios
 
-The `UserService` (`src/app/services/user.service.ts`) handles data fetching:
+El servicio UserService (src/app/services/user.service.ts) se encarga de obtener los datos:
 typescript export class UserService { private apiUrl = '/users.json';
 
 constructor(private http: HttpClient) {}
@@ -73,51 +99,47 @@ constructor(private http: HttpClient) {}
 getUsers(): Observable<any[]> { return this.http.get<any[]>(this.apiUrl); } }
 
 
-## 🎨 User List Component
+## 🎨 Componente Lista de Usuarios
 
-The `UserListComponent` displays users in a styled table format with:
-- Responsive layout
-- Table header with column names (Nombre, Correo)
-- Gradient styling for headers
-- Hover effects on rows
-- Alternating row colors
+El componente UserListComponent muestra los usuarios en una tabla con:
 
-## 🔄 Data Flow
-UserListComponent ↓ UserService (getUsers()) ↓ HttpClient.get() → /assets/users.json ↓ RxJS Observable ↓ Template (async pipe)
+Diseño responsivo
+Cabecera con nombres de columnas (Nombre, Correo)
+Estilos con gradiente en el encabezado
+Efectos hover en las filas
+Colores alternos para mejorar la legibilidad
 
-## 📱 Browser Support
+## 🔄 Flujo de Datos
+UserListComponent
+   ↓
+UserService (getUsers)
+   ↓
+HttpClient.get()
+   ↓
+assets/users.json
+   ↓
+Observable RxJS
+   ↓
+Template (async pipe)
+
+## 📱 Compatibilidad de Navegadores
 
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 
-## 🏗️ Building for Production
-bash npm run build
-
-The optimized build artifacts will be stored in the `dist/` directory.
-
-## ✅ Testing
-
-Run the test suite:
-bash npm test
-
-
-## 🤝 Contributing
+## 🤝 Contribuciones
 
 Contributions are welcome! Here's how you can help:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Haz un fork del repositorio
+2. Crea una nueva rama (git checkout -b feature/NuevaFuncionalidad)
+3. Realiza commit de tus cambios (`git commit -m "Añade nueva funcionalidad")
+4. Sube la rama (`git push origin feature/NuevaFuncionalidad)
+5. Abre un Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 📚 Additional Resources
+## 📚 Recursos Adicionales
 
 - [Angular Documentation](https://angular.dev)
 - [Angular CLI Documentation](https://angular.dev/tools/cli)
@@ -131,10 +153,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Support
 
-If you have any questions or encounter issues, please open an issue on the GitHub repository.
+Si tienes preguntas o encuentras problemas, abre un issue en el repositorio de GitHub.
 
 ---
 
-**Last Updated**: April 2026  
-**Angular Version**: 21.2.3  
-**Node Version**: 18+
+Última actualización: Abril 2026
+Versión de Angular: 21.2.3
+Versión de Node.js: 18++
